@@ -1,0 +1,8 @@
+{
+    "diagnosticLanguage": "ru",
+    "diagnostics": {
+      "LineLength": {
+        "maxLineLength": 120
+      }
+    }
+  }

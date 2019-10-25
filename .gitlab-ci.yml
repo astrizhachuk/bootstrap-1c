@@ -1,0 +1,7 @@
+stages:
+  - starter
+
+job:
+  stage: starter
+  script: echo "Hi. world!"
+  when: manual
