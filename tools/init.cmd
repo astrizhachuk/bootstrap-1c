@@ -25,8 +25,7 @@ if "%MODE%"=="storage" (
 )
 
 call runner createrepo --settings .\tools\runner.json
-git flow init
-git flow feature start %RUNNER_FEATURE%
+git checkout -b "feature/%RUNNER_FEATURE%"
 
 exit /b
 
