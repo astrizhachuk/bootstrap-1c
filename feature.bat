@@ -14,5 +14,5 @@ if "%MODE%"=="start" ( call :start )
 exit /b
 
 :start
-./tools/init.cmd src %*
+call ./tools/init.cmd src %*
 exit /b
