@@ -56,7 +56,7 @@ exit /b
 
 :createrepo
 call runner createrepo --settings .\tools\runner.json
-call gitsync set-version 1 %SRC%
+call gitsync set-version 0 %SRC%
 exit /b
 
 :export
