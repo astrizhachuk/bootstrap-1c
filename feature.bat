@@ -15,6 +15,7 @@ if "%1"=="" (
     echo "Unknown mode"
     exit /b
 ) else (
+    call git config --local core.quotepath false
     call git checkout -b "feature/%FEATURE%"
     set MODE=%1
 )
