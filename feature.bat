@@ -15,6 +15,7 @@ if "%1"=="" (
     echo "Unknown mode"
     exit /b
 ) else (
+    call git config --local core.autocrlf true
     call git config --local core.quotepath false
     call git checkout -b "feature/%FEATURE%"
     set MODE=%1
@@ -61,5 +62,6 @@ call gitsync set-version 0 %SRC%
 exit /b
 
 :export
+call tools\DecompileFeatures
 call gitsync s -R
 exit /b
