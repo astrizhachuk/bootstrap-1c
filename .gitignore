@@ -1,5 +1,5 @@
 build/
-
 features/**/*.epf
+test/**/*.epf
 src/ConfigDumpInfo.xml
 fileversion
