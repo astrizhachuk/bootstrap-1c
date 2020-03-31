@@ -40,8 +40,12 @@ tools\CompileFeatures.bat
 
 Запуск vanessa-automation в пакетном режиме запуска конфигуратора с формированием отчета в формате allure:
 
-`"C:\Program Files\1cv8\8.3.10.2667\bin\1cv8c.exe" /TESTMANAGER /F"C:\w\1c\git\features\SRS-100\build\base" /Execute "C:\Program Files\OneScript\lib\vanessa-automation\vanessa-automation.epf" /N "Администратор" /P "" /RunModeManagedApplication /C"StartFeaturePlayer;workspaceRoot=C:\w\1c\git\features\SRS-100;instrumentsRoot=C:\Program_Files\OneScript\lib\vanessa-automation;VBParams=C:\w\1c\git\features\SRS-100/tools/va/8310-unit.json"`
+```bash
+"C:\Program Files\1cv8\8.3.10.2667\bin\1cv8c.exe" /TESTMANAGER /F"C:\w\1c\git\features\SRS-100\build\base" /Execute "C:\Program Files\OneScript\lib\vanessa-automation\vanessa-automation.epf" /N "Администратор" /P "" /RunModeManagedApplication /C"StartFeaturePlayer;workspaceRoot=C:\w\1c\git\features\SRS-100;instrumentsRoot=C:\Program_Files\OneScript\lib\vanessa-automation;VBParams=C:\w\1c\git\features\SRS-100/tools/va/8310-unit.json"
+```
 
 Запуск сервера allure с результатом тестирования:
 
-`allure serve C:\w\1c\git\features\SRS-100\build\allurereport\8.3.10-func`
+```bash
+allure serve C:\w\1c\git\features\SRS-100\build\allurereport\8.3.10-func
+```
