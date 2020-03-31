@@ -48,7 +48,8 @@ bootstrap-1c/
 `./tools` - для хранения любых сторонних утилит, необходимых для настройки проекта или для дополнительной установки, например:
 
 * allure
-* oscript
+* vanessa-automation
+* onescript
 * powershell
 * wget
 * ...
