@@ -6,9 +6,11 @@
 
 ```text
 ./tools/
+├── epf/
 ├── onescript/
 ├── va/
 ├── runner.json
+├── users.json
 ├── CompileFeatures.bat
 ├── DecompileFeatures.bat
 └── README.md
@@ -18,6 +20,8 @@
 
 #### Каталоги
 
+`./epf` - вспомогательные обработки, выполняемые при запуске `1С:Предприятие` (например, инициализация пользователей, закрытие приложения и т. д.);
+
 `./onescript` - для хранения скриптов на языке `onescript`;
 
 `./va` - конфигурационные файлы запуска тестов через `vanessa-automation`;
@@ -26,13 +30,15 @@
 
 `runner.json` - конфигурационный файл запуска команд утилиты [vanessa-runner](https://github.com/silverbulleters/vanessa-runner);
 
+`users.json` - конфигурационный файл с перечнем пользователей и назначенным им ролям, используемый в обработке инициализации пустой базы данных `InitDB.epf` (см. ./epf/);
+
 `CompileFeatures.bat` - файл для [запуска компиляции](https://github.com/Pr-Mex/ExternalModulesConverterFor1C) `*.epf` файлов из формата `xml`, расположенных в каталоге `./features`. Запускать надо из корня проекта, например, выполнить через CLI команду:
 
 ```bash
 tools\CompileFeatures.bat
 ```
 
-`DecompileFeatures.bat` - файл для запуска декомпиляции `*.epf` файлов в формат `xml`, расположенных в каталоге `./features`;
+`DecompileFeatures.bat` - файл для запуска разбора `*.epf` файлов в формат `xml`, расположенных в каталоге `./features`;
 
 `README.md` - файл с описанием каталога в формате Markdown. Предполагается, что сначала описание подготавливается в файле README.md (мастер), а затем импортируется в confluence через "Вставить разметку -  Вставить Confluence Wiki". Преобразовывать оформление можно через [конвертер разметки](http://chunpu.github.io/markdown2confluence/browser/). "Вставить разметку - Вставить Markdown" в Confluence 6.15.6 работает некорректно, ломая разметку. В более поздних версиях ситуация может измениться;
 
@@ -47,5 +53,5 @@ tools\CompileFeatures.bat
 Запуск сервера allure с результатом тестирования:
 
 ```bash
-allure serve C:\w\1c\git\features\SRS-100\build\allurereport\8.3.10-func
+allure serve C:\w\1c\git\features\SRS-100\build\allure-report\8.3.10-func
 ```
