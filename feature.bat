@@ -71,8 +71,7 @@ exit /b
 
 :initDB
 call oscript .\tools\onescript\Compile.os .\tools\epf\
-call runner run --settings .\tools\runner.json --execute .\tools\epf\InitDB.epf --command "CREATEADMIN"
-call runner run --settings .\tools\runner.json --db-user "Администратор" --execute .\tools\epf\InitDB.epf --command "USERS-FROM-JSON=.\tools\users.json"
+call runner run --settings .\tools\runner.json --execute .\tools\epf\InitDB.epf --command "file=.\tools\users.json"
 exit /b
 
 :export
