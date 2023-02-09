@@ -1,6 +1,11 @@
-build/
+.vscode
+/build
+/public
+/reports
 features/**/*.epf
 test/**/*.epf
 tools/**/*.epf
 src/ConfigDumpInfo.xml
+src/dumplist.txt
 fileversion
+*.log
