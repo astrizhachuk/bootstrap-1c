@@ -12,6 +12,7 @@ set RUNNER_V8VERSION=8.3.10
 set GITSYNC_V8VERSION=%RUNNER_V8VERSION%
 set GITSYNC_STORAGE_PATH=./build/storage
 set GITSYNC_WORKDIR=%SRC%
+set VA_SINGLE_PATH=%VA_SINGLE_PATH%
 
 if "%1"=="" (
     echo "Unknown mode"
@@ -19,10 +20,10 @@ if "%1"=="" (
 ) else (
     call git config --local core.autocrlf true
     call git config --local core.quotepath false
-    call git checkout -b "feature/%FEATURE%"
     set MODE=%1
 )
 if "%MODE%"=="start" (
+    call git checkout -b "feature/%FEATURE%"
     call :src
     call :createrepo
     )
@@ -42,6 +43,10 @@ if "%MODE%"=="export" (
 )
 if "%MODE%"=="push" (
     call git push --set-upstream origin "feature/%FEATURE%"
+    call git push --tags
+)
+if "%MODE%"=="test" (
+    call :test
 )
 
 echo "feature done"
@@ -77,4 +82,10 @@ exit /b
 :export
 call tools\DecompileFeatures
 call gitsync s -R
+exit /b
+
+:test
+call oscript .\tools\onescript\Compile.os .\test\
+call runner run --settings .\tools\runner.json --db-user "Разработчик" --execute %VA_SINGLE_PATH% --command "StartFeaturePlayer;ShowMainForm=False;ClearCacheSteps;workspaceRoot=%CD%;VBParams=%CD%\tools\va\unit.json" --additional /TESTMANAGER
+call allure serve %CD%\reports\allure
 exit /b
