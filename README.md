@@ -1,5 +1,7 @@
 # Краткое описание проекта
 
+[![OpenYellow](https://img.shields.io/endpoint?url=https://openyellow.org/data/badges/1/217470698.json)](https://openyellow.org/grid?data=top&repo=217470698)
+
 Шаблон для быстрого создания проектов 1С.
 
 ## Требуемое программное окружение
